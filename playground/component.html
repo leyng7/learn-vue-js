@@ -7,15 +7,23 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <app-header></app-header>
+      <app-content></app-content>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+      Vue.component("app-header", {
+        template: "<h1>Header</h1>",
+      });
+
+      Vue.component("app-content", {
+        template: "<div>Content</div>",
+      });
+
       var vm = new Vue({
         el: "#app",
-        data: {
-          message: "hi",
-        },
       });
     </script>
   </body>
